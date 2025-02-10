@@ -1,5 +1,5 @@
 {
-  "name": "super-push-api",
+  "name": "make-qrcod",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,6 +10,17 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "@loskir/styled-qr-code-node": "^1.5.2",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.1",
+    "@types/qr-image": "^3.2.9",
+    "@types/qrcode": "^1.5.5",
+    "express": "^4.21.2",
+    "jimp": "^1.6.0",
+    "qr-code-styling": "^1.9.1",
+    "qr-image": "^3.2.0",
+    "qrcode": "^1.5.4",
+    "skia-canvas": "^2.0.2",
+    "typescript": "^5.7.3"
   }
 }
