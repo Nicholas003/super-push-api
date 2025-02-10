@@ -78,7 +78,7 @@ app.get('/qq', async (req, res) => {
 })
 
 app.get('/', async (req, res) => {
-    // res.send('Hello World')
+    res.send('Hello World')
 
     // const qrCodeImageUrl = await qrcode.toBuffer(
     //     'https://mp.weixin.qq.com/',
