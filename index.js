@@ -1,6 +1,6 @@
 import express from 'express'
-// import a from 'qr-code-styling';
-import { QRCodeCanvas } from '@loskir/styled-qr-code-node';
+import {QRCodeStyling} from 'qr-code-styling';
+// import { QRCodeCanvas } from '@loskir/styled-qr-code-node';
 // import { QRCodeCanvas } from './qr.js';
 
 
