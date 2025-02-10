@@ -1,33 +1,34 @@
 import express from 'express'
-import {QRCodeStyling} from 'qr-code-styling';
-// import { QRCodeCanvas } from '@loskir/styled-qr-code-node';
-// import { QRCodeCanvas } from './qr.js';
+// import QRCodeStyling from 'qr-code-styling';
+import * as v from '@loskir/styled-qr-code-node';
+import { QRCodeCanvas } from './qr.js';
 
 
 const app = express()
 
 app.get('/qq', async (req, res) => {
-    const qrCode = new QRCodeStyling({
-        width: 300,
-        height: 300,
-        data: "https://example.com",
-        image: "",
-        dotsOptions: {
-            color: "#4267b2",
-            type: "rounded" // 修改点的样式
-        },
-        cornersSquareOptions: {
-            color: "#4267b2",
-            type: "extra-rounded" // 修改识别点的样式
-        },
-        cornersDotOptions: {
-            color: "#4267b2",
-            type: "dot" // 修改识别点中心点的样式
-        }
-    });
+    // console.log()
+    // const qrCode = new QRCodeStyling({
+    //     width: 300,
+    //     height: 300,
+    //     data: "https://example.com",
+    //     image: "",
+    //     dotsOptions: {
+    //         color: "#4267b2",
+    //         type: "rounded" // 修改点的样式
+    //     },
+    //     cornersSquareOptions: {
+    //         color: "#4267b2",
+    //         type: "extra-rounded" // 修改识别点的样式
+    //     },
+    //     cornersDotOptions: {
+    //         color: "#4267b2",
+    //         type: "dot" // 修改识别点中心点的样式
+    //     }
+    // });
 
-    res.writeHead(200, { 'Content-Type': 'image/png', });
-    res.end(await qrCode.toBuffer())
+    // res.writeHead(200, { 'Content-Type': 'image/png', });
+    // res.end(await qrCode.toBuffer())
 
     // const qrCode = new QRCodeCanvas({
     //     data: 'My text or trl',
@@ -35,37 +36,37 @@ app.get('/qq', async (req, res) => {
     //     image: './'
     // });
 
-    // const qrCode = new QRCodeCanvas({
-    //     data: 'https://zhuanlan.zhihuhttps://zhuanlan.zhihuhttps://zhuanlan.zhihuhttps://zhuanlan.zhihuhttps://zhuanlan.zhihuhttps://zhuanlan.zhihu',
-    //     width: 1000,
-    //     height: 1000,
-    //     margin:20,
-    //     // hideBackgroundDots:false,
-    //     dotsOptions: {
-    //         color: '#000000a9',
-    //         // whiteColor:"#fff",
-    //         // type: 'dots',
-    //         // dotsSize:10,
-    //         // roundSize:100,
-    //     },
-    //     cornersDotOptions:{
-    //         type:'square'
-    //     },
-    //     cornersSquareOptions:{
-    //         type:'square'
+    const qrCode = new QRCodeCanvas({
+        data: 'https://zhuanlan.zhihuhttps://zhuanlan.zhihuhttps://zhuanlan.zhihuhttps://zhuanlan.zhihuhttps://zhuanlan.zhihuhttps://zhuanlan.zhihu',
+        width: 1000,
+        height: 1000,
+        margin:20,
+        // hideBackgroundDots:false,
+        dotsOptions: {
+            color: '#000000a9',
+            // whiteColor:"#fff",
+            // type: 'dots',
+            // dotsSize:10,
+            // roundSize:100,
+        },
+        cornersDotOptions:{
+            type:'square'
+        },
+        cornersSquareOptions:{
+            type:'square'
             
-    //     },
-    //     backgroundOptions: {
-    //         color: "#00000000",
-    //     },
-    //     imageOptions: {
-    //         // hideBackgroundDots:false
-    //         // crossOrigin: "anonymous",
-    //         // margin: 40,
-    //     },
+        },
+        backgroundOptions: {
+            color: "#00000000",
+        },
+        imageOptions: {
+            // hideBackgroundDots:false
+            // crossOrigin: "anonymous",
+            // margin: 40,
+        },
         
-    //     // image: './pathToImage'
-    // });
+        // image: './pathToImage'
+    });
 
 
     // //"png" | "jpg" | "jpeg" | "pdf" | "svg"
@@ -75,8 +76,8 @@ app.get('/qq', async (req, res) => {
     // //   qrCode.getRawData("png").then((buffer) => {
     // //     fs.writeFileSync("test.png", buffer);
     // //   });
-    // res.writeHead(200, { 'Content-Type': 'image/png', });
-    // res.end(await qrCode.toBuffer())
+    res.writeHead(200, { 'Content-Type': 'image/png', });
+    res.end(await qrCode.toBuffer())
 
 })
 
