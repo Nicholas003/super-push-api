@@ -13,7 +13,7 @@ const users = [
 
 // 简单写一个接口
 app.get("/", (req, res) => {
-	res.send("这是一个Node express简单服务。");
+	res.send("这是一个Node express简单服务。1");
 });
 
 
