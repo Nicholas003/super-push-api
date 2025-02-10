@@ -115,7 +115,7 @@ app.get('/', async (req, res) => {
     // temp_qrcode.pipe(res);
 })
 
-// app.listen(9000, () => console.log('启动成功'))
+app.listen(9000, () => console.log('启动成功'))
 
 
 module.exports = app
