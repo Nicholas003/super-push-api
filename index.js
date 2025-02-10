@@ -1,30 +1,33 @@
 import express from 'express'
 // import a from 'qr-code-styling';
-// import { QRCodeCanvas } from '@loskir/styled-qr-code-node';
+import { QRCodeCanvas } from '@loskir/styled-qr-code-node';
 // import { QRCodeCanvas } from './qr.js';
 
 
 const app = express()
 
 app.get('/qq', async (req, res) => {
-    // const qrCode = new QRCodeStyling({
-    //     width: 300,
-    //     height: 300,
-    //     data: "https://example.com",
-    //     image: "",
-    //     dotsOptions: {
-    //         color: "#4267b2",
-    //         type: "rounded" // 修改点的样式
-    //     },
-    //     cornersSquareOptions: {
-    //         color: "#4267b2",
-    //         type: "extra-rounded" // 修改识别点的样式
-    //     },
-    //     cornersDotOptions: {
-    //         color: "#4267b2",
-    //         type: "dot" // 修改识别点中心点的样式
-    //     }
-    // });
+    const qrCode = new QRCodeStyling({
+        width: 300,
+        height: 300,
+        data: "https://example.com",
+        image: "",
+        dotsOptions: {
+            color: "#4267b2",
+            type: "rounded" // 修改点的样式
+        },
+        cornersSquareOptions: {
+            color: "#4267b2",
+            type: "extra-rounded" // 修改识别点的样式
+        },
+        cornersDotOptions: {
+            color: "#4267b2",
+            type: "dot" // 修改识别点中心点的样式
+        }
+    });
+
+    res.writeHead(200, { 'Content-Type': 'image/png', });
+    res.end(await qrCode.toBuffer())
 
     // const qrCode = new QRCodeCanvas({
     //     data: 'My text or trl',
